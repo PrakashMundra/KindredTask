@@ -7,7 +7,6 @@ import android.arch.lifecycle.MediatorLiveData;
 import android.databinding.ObservableBoolean;
 import android.support.annotation.NonNull;
 
-import com.kindredtask.App;
 import com.kindredtask.data.DataRepository;
 import com.kindredtask.data.model.Game;
 
@@ -20,7 +19,7 @@ public class ListViewModel extends AndroidViewModel {
 
     public ListViewModel(@NonNull Application application) {
         super(application);
-        this.mDataRepository = ((App) application).getRepository();
+        this.mDataRepository = DataRepository.getInstance();
     }
 
     public LiveData<List<Game>> getGamesList() {

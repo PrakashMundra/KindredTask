@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="game"
+            type="com.kindredtask.data.model.GameKt" />
+    </data>
+
+    <RelativeLayout style="@style/MatchWidth">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/list_item_padding">
+
+            <ImageView
+                android:layout_width="?android:attr/listPreferredItemHeight"
+                android:layout_height="?android:attr/listPreferredItemHeight"
+                android:background="#12345F"
+                android:contentDescription="@null"
+                app:imageUrl="@{game.imageUrl}" />
+
+            <Space
+                android:layout_width="@dimen/list_item_padding"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/MatchWidth"
+                android:text="@{game.gameName}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorPrimaryDark" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>
